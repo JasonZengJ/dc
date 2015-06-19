@@ -16,7 +16,7 @@
 			"database"
 		],
 		"psr-4": {
-			"laravel\\": "app/"
+			"diancan\\": "app/"
 		}
 	},
 	"autoload-dev": {

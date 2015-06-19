@@ -1,4 +1,4 @@
-<?php namespace laravel\Http\Middleware;
+<?php namespace diancan\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

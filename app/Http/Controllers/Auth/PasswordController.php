@@ -1,6 +1,6 @@
-<?php namespace laravel\Http\Controllers\Auth;
+<?php namespace diancan\Http\Controllers\Auth;
 
-use laravel\Http\Controllers\Controller;
+use diancan\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;

@@ -1,6 +1,6 @@
-<?php namespace laravel\Http\Controllers\Auth;
+<?php namespace diancan\Http\Controllers\Auth;
 
-use laravel\Http\Controllers\Controller;
+use diancan\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -117,6 +117,21 @@ class AuthController extends Controller {
 	protected function getFailedLoginMessage()
 	{
 		return '手机号码或密码不对';
+	}
+
+	/**
+	 * Get the post register / login redirect path.
+	 *
+	 * @return string
+	 */
+	public function redirectPath()
+	{
+		if (property_exists($this, 'redirectPath'))
+		{
+			return $this->redirectPath;
+		}
+
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
 	}
 
 	private function setUserSession($request) {

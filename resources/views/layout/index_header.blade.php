@@ -53,11 +53,17 @@
         }
 
         .am-offcanvas-content .logout {
-            margin-top: 50px;
+            position: absolute;
+            bottom: 90px;
+            /*right: 10px;*/
+            left: 0px;
         }
 
         .am-offcanvas-content .admin {
-            margin-top: 20px;
+            position: absolute;
+            bottom: 30px;
+            /*right: 10px;*/
+            left: 0px;
         }
 
         .am-offcanvas-content .admin a {
@@ -108,23 +114,29 @@
                         <img width="67" src="{{asset('/image/frontend/siderbar_person.png')}}">
                         <div class="username">
                             {{$user->user_name}}
+                            <a href="{{url('user/'.$user->id.'/edit')}}"><i class="am-icon-edit" style="color: #333333;position: absolute;right: 20px;margin-top: 10px;font-size: 18px"></i></a>
+
+
                         </div>
+
 
                     </div>
                     <hr />
+                    {{--<div class="orders">--}}
+                        {{--<span><img width="25" src="{{asset('/image/frontend/dish_person.png')}}"><a href="{{url('recvaddr')}}">我的资料</a></span>--}}
+                    {{--</div>--}}
                     <div class="orders">
-                        <span><img width="25" src="{{asset('/image/frontend/dish_person.png')}}"><a href="{{url('recvaddr')}}">我的资料</a></span>
-                    </div>
-                    <div class="addresses">
                         <span><img width="25" src="{{asset('/image/frontend/siderbar_myorders.png')}}"><a href="/order">我的订单</a></span>
                     </div>
 
                     <div class="logout" align="center" >
-                        <a href="{{url('/auth/logout')}}" class="am-btn am-btn-danger am-btn-block" style="color: #ffffff;padding: 0.5em 1.0em">注销</a>
+                        <a href="{{url('/auth/logout')}}" class="am-btn am-btn-danger am-btn-block" style="color: #ffffff;padding: 0.5em 1.0em;width: 70%">注销</a>
                     </div>
+                    @if($user->user_type == '1')
                     <div class="admin" align="center" >
                         <a href="{{url('/admin')}}" target="_blank" style="padding: 0.5em 1.0em">后台管理</a>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

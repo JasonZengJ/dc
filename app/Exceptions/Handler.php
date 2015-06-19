@@ -1,4 +1,4 @@
-<?php namespace laravel\Exceptions;
+<?php namespace diancan\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

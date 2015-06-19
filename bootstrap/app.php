@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'laravel\Http\Kernel'
+	'diancan\Http\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
-	'laravel\Console\Kernel'
+	'diancan\Console\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'laravel\Exceptions\Handler'
+	'diancan\Exceptions\Handler'
 );
 
 /*

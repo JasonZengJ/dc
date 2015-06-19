@@ -139,11 +139,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'laravel\Providers\AppServiceProvider',
-		'laravel\Providers\BusServiceProvider',
-		'laravel\Providers\ConfigServiceProvider',
-		'laravel\Providers\EventServiceProvider',
-		'laravel\Providers\RouteServiceProvider',
+		'diancan\Providers\AppServiceProvider',
+		'diancan\Providers\BusServiceProvider',
+		'diancan\Providers\ConfigServiceProvider',
+		'diancan\Providers\EventServiceProvider',
+		'diancan\Providers\RouteServiceProvider',
 
 	],
 

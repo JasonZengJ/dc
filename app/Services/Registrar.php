@@ -1,6 +1,6 @@
-<?php namespace laravel\Services;
+<?php namespace diancan\Services;
 
-use laravel\User;
+use diancan\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

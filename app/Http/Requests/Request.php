@@ -1,4 +1,4 @@
-<?php namespace laravel\Http\Requests;
+<?php namespace diancan\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

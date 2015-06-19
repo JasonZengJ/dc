@@ -1,4 +1,4 @@
-<?php namespace laravel\Providers;
+<?php namespace diancan\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'laravel\Services\Registrar'
+			'diancan\Services\Registrar'
 		);
 	}
 

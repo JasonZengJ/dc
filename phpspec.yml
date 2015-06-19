@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: laravel
-        psr4_prefix: laravel
+        namespace: diancan
+        psr4_prefix: diancan
         src_path: app

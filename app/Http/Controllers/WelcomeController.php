@@ -1,4 +1,4 @@
-<?php namespace laravel\Http\Controllers;
+<?php namespace diancan\Http\Controllers;
 use Illuminate\Routing\Router;
 class WelcomeController extends Controller {
 

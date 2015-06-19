@@ -1,6 +1,7 @@
-<?php namespace laravel\Http\Controllers;
+<?php namespace diancan\Http\Controllers;
 
 use Illuminate\Http\Request;
+use diancan\FoodTypes;
 
 class IndexController extends Controller {
 
@@ -23,7 +24,21 @@ class IndexController extends Controller {
     public function index(Request $request)
     {
         $user=$request->session()->get('user');
-        return view('index',['user' => $user]);
+
+        $foods_types = FoodTypes::all();
+
+
+//        foreach($foods_types as $foodtype) {
+//            $foods = $foodtype->foods()->get();
+//            dump($foods);
+//        }
+
+//        $foods_data = array();
+
+//        dump($foods_types);
+
+
+        return view('index',['user' => $user,'foods_data' => $foods_types]);
     }
 
 }

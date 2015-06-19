@@ -1,4 +1,4 @@
-<?php namespace laravel\Http;
+<?php namespace diancan\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'laravel\Http\Middleware\VerifyCsrfToken',
+		'diancan\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,10 +24,10 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'laravel\Http\Middleware\Authenticate',
+		'auth' => 'diancan\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'laravel\Http\Middleware\RedirectIfAuthenticated',
-		'mymid' => 'laravel\Http\Middleware\MyMiddleware',
+		'guest' => 'diancan\Http\Middleware\RedirectIfAuthenticated',
+		'mymid' => 'diancan\Http\Middleware\MyMiddleware',
 	];
 
 }

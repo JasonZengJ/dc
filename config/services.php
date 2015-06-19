@@ -30,7 +30,7 @@ return [
 	],
 
 	'stripe' => [
-		'model'  => 'laravel\User',
+		'model'  => 'diancan\User',
 		'key' => '',
 		'secret' => '',
 	],

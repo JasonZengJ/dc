@@ -13,23 +13,34 @@
 
 
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'IndexController@index');
 Route::get('/', 'IndexController@index');
 
-Route::get('user/{user}',function(laravel\User $user) {
+//Route::get('user/{user}',function(diancan\User $user) {
+//
+//	return view("welcome",['user' => $user]);
+//
+//})->where(['name' => '[a-z]+',]);
 
-	return view("welcome",['user' => $user]);
+//Route::group(['middleware' => 'mymid'], function()
+//{
+//	Route::get('/welcome', 'WelcomeController@index');
+//
+//});
 
-})->where(['name' => '[a-z]+',]);
-
-Route::group(['middleware' => 'mymid'], function()
-{
-	Route::get('/welcome', 'WelcomeController@index');
-
+Route::group(['prefix' => 'admin','namespace'],function(){
+	Route::resources([
+		'/' => 'Admin\IndexController'
+	]);
+	Route::controllers([
+		'/' => 'Admin\IndexController'
+	]);
 });
 
+Route::resource('user','UsersController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
+	'user'=> 'UsersController',
 ]);

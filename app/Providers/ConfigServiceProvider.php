@@ -1,4 +1,4 @@
-<?php namespace laravel\Providers;
+<?php namespace diancan\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

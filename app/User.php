@@ -1,4 +1,4 @@
-<?php namespace laravel;
+<?php namespace diancan;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

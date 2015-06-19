@@ -1,4 +1,4 @@
-<?php namespace laravel\Providers;
+<?php namespace diancan\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'laravel\Http\Controllers';
+	protected $namespace = 'diancan\Http\Controllers';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.
@@ -25,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider {
 		//
 		
 		parent::boot($router);
-		$router->model('user', 'laravel\User');
+		$router->model('user', 'diancan\User');
 	}
 
 	/**

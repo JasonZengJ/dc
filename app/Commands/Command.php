@@ -1,4 +1,4 @@
-<?php namespace laravel\Commands;
+<?php namespace diancan\Commands;
 
 abstract class Command {
 
