@@ -129,9 +129,9 @@
                     <div class="item-price">￥{{$food->food_price}} </div>
 
                     <div class="item-operation" data-id = '{{$food->id}}' data-name = '{{$food->food_name}}' data-price="{{$food->food_price}}" data-catename="{{$food->foodsType->foodtype_name}}" data-cateId = "{{$food->foodsType->id}}" >
-                        <span  class="minus" style="display: none"><img src="{{asset('/image/frontend/dish_minus.png')}}"></span>
+                        <span  class="minus" style="display: none"><img src="/image/frontend/dish_minus.png"></span>
                         <span  class="amount" style="display: none">0</span>
-                        <span  class="add"><img src="{{asset('/image/frontend/dish_add.png')}}"></span>
+                        <span  class="add"><img src="/image/frontend/dish_add.png"></span>
                     </div>
                 </div>
                 @endforeach
@@ -180,7 +180,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{{asset('js/lib/jquery/jquery.touchSwipe.min.js')}}"></script>
+    <script type="text/javascript" src="js/lib/jquery/jquery.touchSwipe.min.js"></script>
 
     <script type="text/javascript">
 
@@ -214,7 +214,7 @@
         })
 
     </script>
-    <script type="text/javascript" src="{{asset('js/index.js')}}"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 @endsection
 
 
