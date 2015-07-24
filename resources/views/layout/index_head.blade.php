@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
     <title>Laravel</title>
 
-    <link href="{{ asset('/css/amazeui.min.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{asset('/image/icon.png')}}" type="image/x-icon" />
-    <link rel="apple-touch-icon-precomposed" href="{{asset('/image/icon.png')}}">
-    <link rel="shortcut icon" href="{{asset('/image/icon.png')}}" type="image/x-icon" />
+    <link href="/css/amazeui.min.css" rel="stylesheet">
+    <link rel="icon" href="/image/icon.png'" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="/image/icon.png">
+    <link rel="shortcut icon" href="/image/icon.png" type="image/x-icon" />
 
     <!-- Fonts -->
     {{--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
-    <script src="{{asset('/js/lib/jquery/jquery-1.11.3.min.js')}}"></script>
-    <script src="{{asset('/js/lib/amazeui/amazeui.min.js')}}"></script>
+    <script src="/js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="/js/lib/amazeui/amazeui.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

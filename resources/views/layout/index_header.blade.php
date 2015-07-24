@@ -96,11 +96,11 @@
 
             @if($user)
             <a href="#right-link" class="" data-am-offcanvas="{target: '#user_center'}">
-                <img src="{{asset('/image/frontend/dish_person.png')}}" style="height: 25px" alt=""/>
+                <img src="/image/frontend/dish_person.png" style="height: 25px" alt=""/>
             </a>
             @else
-                <a href="{{url('/auth/login')}}" >
-                    <img src="{{asset('/image/frontend/dish_person.png')}}" style="height: 25px" alt=""/>
+                <a href="/auth/login" >
+                    <img src="/image/frontend/dish_person.png" style="height: 25px" alt=""/>
                 </a>
             @endif
         </div>
@@ -111,7 +111,7 @@
                 <div class="am-offcanvas-content">
                     <div class="avatar" align="center">
 
-                        <img width="67" src="{{asset('/image/frontend/siderbar_person.png')}}">
+                        <img width="67" src="/image/frontend/siderbar_person.png">
                         <div class="username">
                             {{$user->user_name}}
                             <a href="{{url('user/'.$user->id.'/edit')}}"><i class="am-icon-edit" style="color: #333333;position: absolute;right: 20px;margin-top: 10px;font-size: 18px"></i></a>
@@ -123,10 +123,10 @@
                     </div>
                     <hr />
                     {{--<div class="orders">--}}
-                        {{--<span><img width="25" src="{{asset('/image/frontend/dish_person.png')}}"><a href="{{url('recvaddr')}}">我的资料</a></span>--}}
+                        {{--<span><img width="25" src="/image/frontend/dish_person.png')}}"><a href="{{url('recvaddr')}}">我的资料</a></span>--}}
                     {{--</div>--}}
                     <div class="orders">
-                        <span><img width="25" src="{{asset('/image/frontend/siderbar_myorders.png')}}"><a `href="/order">我的订单</a></span>
+                        <span><img width="25" src="/image/frontend/siderbar_myorders.png"><a `href="/order">我的订单</a></span>
                     </div>
 
                     <div class="logout" align="center" >
