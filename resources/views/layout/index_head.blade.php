@@ -7,6 +7,9 @@
     <title>Laravel</title>
 
     <link href="{{ asset('/css/amazeui.min.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{asset('/image/icon.png')}}" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="{{asset('/image/icon.png')}}">
+    <link rel="shortcut icon" href="{{asset('/image/icon.png')}}" type="image/x-icon" />
 
     <!-- Fonts -->
     {{--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
