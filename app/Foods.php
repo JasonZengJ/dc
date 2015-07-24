@@ -11,10 +11,18 @@ class Foods extends Model {
      * @var string
      */
     protected $table = 'qiyu_food';
+    public $timestamps = false;
 
     public function foodsType()
     {
-        return $this->belongsTo('diancan\FoodsType');
+        return $this->belongsTo('diancan\FoodsType','food_types_id');
     }
+
+
+    public function carts()
+    {
+        return $this->hasMany('diancan\Carts','cart_food','id');
+    }
+
 
 }

@@ -9,7 +9,7 @@
     <link href="{{ asset('/css/amazeui.min.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    {{--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
     <script src="{{asset('/js/lib/jquery/jquery-1.11.3.min.js')}}"></script>
     <script src="{{asset('/js/lib/amazeui/amazeui.min.js')}}"></script>
 
@@ -20,11 +20,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style="padding-bottom: 49px;">
 
 @yield('header')
 @yield('content')
 @yield('bottom_navbar')
+@yield('footer')
 
 </body>
 </html>

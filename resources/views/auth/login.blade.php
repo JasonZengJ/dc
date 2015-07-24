@@ -9,7 +9,7 @@
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>看看是不是手机号或密码输入有误</strong><br><br>
+							{{--<strong>看看是不是手机号或密码输入有误</strong><br><br>--}}
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>

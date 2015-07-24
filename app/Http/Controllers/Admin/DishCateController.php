@@ -1,13 +1,13 @@
-<?php namespace diancan\Http\Controllers;
+<?php namespace diancan\Http\Controllers\Admin;
 
 use diancan\Http\Requests;
 use diancan\Http\Controllers\Controller;
+use diancan\FoodsType;
 
-use diancan\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class UsersController extends Controller {
+class DishCateController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,6 +17,7 @@ class UsersController extends Controller {
 	public function index()
 	{
 		//
+		return view('admin/dish_cates/dish_cates',['dishCates' => FoodsType::all()]);
 	}
 
 	/**
@@ -27,6 +28,8 @@ class UsersController extends Controller {
 	public function create()
 	{
 		//
+
+		return view('admin/dish_cates/dish_cates_add');
 	}
 
 	/**
@@ -37,6 +40,16 @@ class UsersController extends Controller {
 	public function store()
 	{
 		//
+		$dishCates = new FoodsType();
+		$dishCates->foodtype_name = Input::get('cateName');
+
+		if ($dishCates->save()) {
+
+			return redirect('admin/dishCates');
+
+		} else {
+
+		}
 	}
 
 	/**
@@ -56,11 +69,11 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id,Request $request)
+	public function edit($id)
 	{
 		//
-		return view('user.edit',['user' => $request->getSession()->get('user'),'headerTitle' => '个人资料修改']);
-
+		$dishCate = FoodsType::find($id);
+		return view('admin/dish_cates/dish_cates_edit',['dishCate' => $dishCate]);
 	}
 
 	/**
@@ -69,20 +82,16 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id,Request $request)
+	public function update($id)
 	{
 		//
 
-		$user = $request->getSession()->get('user');
+		$dishCate = FoodsType::find($id);
+		$dishCate->foodtype_name = Input::get('cateName');
 
-		$user->user_name = Input::get('userName');
-
-		if ($user->save()) {
-
-			return redirect('/');
-
+		if ($dishCate->save()) {
+			return redirect('admin/dishCates');
 		} else {
-
 		}
 
 	}

@@ -2,7 +2,10 @@
 
 use diancan\Http\Requests;
 use diancan\Http\Controllers\Controller;
+use diancan\Foods;
+use diancan\Orders;
 
+use diancan\User;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller {
@@ -15,8 +18,8 @@ class IndexController extends Controller {
 	public function index()
 	{
 		//
+		return redirect('admin/dishes');
 
-		return view('admin/index');
 	}
 
 	/**

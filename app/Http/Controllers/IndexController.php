@@ -1,7 +1,7 @@
 <?php namespace diancan\Http\Controllers;
 
 use Illuminate\Http\Request;
-use diancan\FoodTypes;
+use diancan\FoodsType;
 
 class IndexController extends Controller {
 
@@ -25,8 +25,7 @@ class IndexController extends Controller {
     {
         $user=$request->session()->get('user');
 
-        $foods_types = FoodTypes::all();
-
+        $foods_types = FoodsType::all();
 
 //        foreach($foods_types as $foodtype) {
 //            $foods = $foodtype->foods()->get();

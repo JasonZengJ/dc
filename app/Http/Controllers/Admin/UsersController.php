@@ -4,6 +4,8 @@ use diancan\Http\Requests;
 use diancan\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use diancan\User;
+use Illuminate\Support\Facades\Input;
 
 class UsersController extends Controller {
 
@@ -15,6 +17,7 @@ class UsersController extends Controller {
 	public function index()
 	{
 		//
+		return view('admin/users/users',['users' => User::where('user_type','0')->get()]);
 	}
 
 	/**
@@ -25,6 +28,7 @@ class UsersController extends Controller {
 	public function create()
 	{
 		//
+		return view('admin/users/users_add');
 	}
 
 	/**
@@ -35,6 +39,23 @@ class UsersController extends Controller {
 	public function store()
 	{
 		//
+		$user = new User();
+		$user->user_account = Input::get('user_account');
+		$user->password 	= bcrypt(Input::get('password'));
+		$user->user_name    = Input::get('user_name');
+		$user->user_type	= Input::get('user_type');
+		$user->user_phone   = Input::get('user_account');
+		$user->user_logintime = time();
+
+		if($user->save()) {
+
+			return redirect('admin/users');
+
+		} else {
+
+		}
+
+
 	}
 
 	/**

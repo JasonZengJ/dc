@@ -15,24 +15,28 @@
     <div class="am-g container">
 
         <div class="menu-title">
-            <h3>菜品管理</h3>
+            <h3>订单管理</h3>
         </div>
 
         <div class="am-scrollable-horizontal">
             <table class="am-table am-table-bordered am-table-striped am-text-nowrap">
                 <thead>
                 <tr>
-                    <th>网站名称</th>
-                    <th>网址</th>
-                    <th>创建时间</th>
+                    <th>编号</th>
+                    <th>下单人</th>
+                    <th>下单时间</th>
+                    {{--<th>状态</th>--}}
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($orders as $order)
                 <tr>
-                    <td>Amaze UI</td>
-                    <td>http://amazeui.org</td>
-                    <td>2012-10-01</td>
+                    <td><a href="orders/{{$order->id}}">{{$order->order_id2}}</a></td>
+                    <td>{{$order->order_username}}</td>
+                    <td>{{$order->order_addtime}}</td>
+                    {{--<td>{{$order->order_addtime}}</td>--}}
                 </tr>
+                @endforeach
 
                 </tbody>
             </table>

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class FoodTypes extends Model {
+class FoodsType extends Model {
 
 	//
     /**
@@ -11,6 +11,7 @@ class FoodTypes extends Model {
      * @var string
      */
     protected $table = 'qiyu_foodtype';
+    public $timestamps = false;
 
     public function foods() {
 

@@ -5,6 +5,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use diancan\User;
 
 class AuthController extends Controller {
 
@@ -48,11 +49,10 @@ class AuthController extends Controller {
 		]);
 
 		$credentials = $request->only('user_phone', 'password');
-//		$credentials['password'] = bcrypt($credentials['password']);
-
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
+
 			$this->setUserSession($request);
 			return redirect()->intended($this->redirectPath());
 		}
