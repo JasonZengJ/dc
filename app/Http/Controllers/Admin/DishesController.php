@@ -47,6 +47,7 @@ class DishesController extends Controller {
 		$food->food_name  	 = Input::get('dish_name');
 		$food->food_price 	 = Input::get('dish_price');
 		$food->food_types_id = Input::get('dish_cate');
+		$food->food_shop     = 1;
 
 		if($food->save()) {
 
