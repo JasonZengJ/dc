@@ -15,7 +15,7 @@
     <div class="am-g container">
 
         <div class="menu-title">
-            <h3>菜品编辑</h3>
+            <h3>菜品详情</h3>
         </div>
 
         <form class="am-form">

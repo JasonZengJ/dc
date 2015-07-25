@@ -7,7 +7,7 @@
 
     <div class="am-g container">
 
-        <form class="am-form" action="../dishCates" method="POST">
+        <form class="am-form" action="{{url('/admin/dishCates')}}" method="POST">
             <fieldset>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <legend>添加分类</legend>

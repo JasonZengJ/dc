@@ -31,7 +31,7 @@
                 <tbody>
                 @foreach($orders as $order)
                 <tr>
-                    <td><a href="orders/{{$order->id}}">{{$order->order_id2}}</a></td>
+                    <td><a href="{{url('/admin/orders/'.$order->id)}}">{{$order->order_id2}}</a></td>
                     <td>{{$order->order_username}}</td>
                     <td>{{$order->order_addtime}}</td>
                     {{--<td>{{$order->order_addtime}}</td>--}}

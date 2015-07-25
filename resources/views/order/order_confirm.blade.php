@@ -11,7 +11,7 @@
 
     <div class="am-g container">
 
-        <form id="orderForm" class="am-form" action="/order" method="POST">
+        <form id="orderForm" class="am-form" action="{{url('/order')}}" method="POST">
             <fieldset>
                 <input type="hidden" name="_token"     value="{{csrf_token()}}">
                 <input type="hidden" name="dishData"   value="{{$dishDataJson}}">

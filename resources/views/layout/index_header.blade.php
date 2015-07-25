@@ -99,7 +99,7 @@
                 <img src="/image/frontend/dish_person.png" style="height: 25px" alt=""/>
             </a>
             @else
-                <a href="/auth/login" >
+                <a href="{{url('/auth/login')}}" >
                     <img src="/image/frontend/dish_person.png" style="height: 25px" alt=""/>
                 </a>
             @endif
@@ -126,7 +126,7 @@
                         {{--<span><img width="25" src="/image/frontend/dish_person.png')}}"><a href="{{url('recvaddr')}}">我的资料</a></span>--}}
                     {{--</div>--}}
                     <div class="orders">
-                        <span><img width="25" src="/image/frontend/siderbar_myorders.png"><a `href="/order">我的订单</a></span>
+                        <span><img width="25" src="/image/frontend/siderbar_myorders.png"><a `href="{{url('/order')}}">我的订单</a></span>
                     </div>
 
                     <div class="logout" align="center" >

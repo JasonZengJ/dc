@@ -23,7 +23,7 @@
         </div>
 
         <div class="menu-button">
-            <a href="dishCates/create" class="am-btn am-btn-primary am-radius">添加分类</a>
+            <a href="{{url('/admin/dishCates/create')}}" class="am-btn am-btn-primary am-radius">添加分类</a>
         </div>
 
         <div class="am-scrollable-horizontal">
@@ -38,7 +38,7 @@
                 @foreach($dishCates as $dishCate)
                 <tr>
                     <td>{{$dishCate->foodtype_name}}</td>
-                    <td><a href="dishCates/{{$dishCate->id}}/edit">编辑</a>
+                    <td><a href="{{url('/admin/dishCates/'.$dishCate->id.'/edit')}}">编辑</a>
                         {{--<a class="deleteDish" data-id="{{$dishCate->id}}" data-name="{{$dishCate->foodtype_name}}">删除</a> --}}
                     </td>
                 </tr>

@@ -42,7 +42,7 @@
                     <td>{{$dish->food_name}}</td>
                     <td>{{$dish->foodsType->foodtype_name}}</td>
                     <td>{{$dish->food_price}}</td>
-                    <td><a href="dishes/{{$dish->id}}/edit">编辑</a> <a class="deleteDish" data-id="{{$dish->id}}" data-name="{{$dish->food_name}}">删除</a> </td>
+                    <td><a href="{{url('/admin/dishes/'.$dish->id.'/edit')}}">编辑</a> <a class="deleteDish" data-id="{{$dish->id}}" data-name="{{$dish->food_name}}">删除</a> </td>
                 </tr>
                 @endforeach
                 </tbody>

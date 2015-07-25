@@ -7,7 +7,7 @@
 
     <div class="am-g container">
 
-        <form class="am-form" action="../{{$dishCate->id}}" method="POST">
+        <form class="am-form" action="{{url('/admin/dishCates/'.$dishCate->id)}}" method="POST">
             <fieldset>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <input type="hidden" name="_method" value="PUT">

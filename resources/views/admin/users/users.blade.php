@@ -23,7 +23,7 @@
         </div>
 
         <div class="menu-button">
-            <a href="users/create" class="am-btn am-btn-primary am-radius">添加用户</a>
+            <a href="{{url('/admin/users/create')}}" class="am-btn am-btn-primary am-radius">添加用户</a>
         </div>
 
         <div class="am-scrollable-horizontal">

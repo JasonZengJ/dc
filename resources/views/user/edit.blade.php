@@ -6,7 +6,7 @@
 
     <div class="am-g container">
 
-        <form class="am-form" action="/user/{{$user->id}}" method="POST" style="margin-top: 20px">
+        <form class="am-form" action="{{url('/user/'.$user->id)}}" method="POST" style="margin-top: 20px">
             <fieldset>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <input type="hidden" name="_method" value="PUT">

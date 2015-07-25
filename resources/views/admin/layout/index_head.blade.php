@@ -7,9 +7,11 @@
     <title>Laravel</title>
 
     <link href="{{ asset('/css/amazeui.min.css') }}" rel="stylesheet">
-
+    <link rel="icon" href="/image/icon.png'" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="/image/icon.png">
+    <link rel="shortcut icon" href="/image/icon.png" type="image/x-icon" />
     <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    {{--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
     <script src="{{asset('/js/lib/jquery/jquery-1.11.3.min.js')}}"></script>
     <script src="{{asset('/js/lib/amazeui/amazeui.min.js')}}"></script>
 

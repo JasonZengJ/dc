@@ -7,7 +7,7 @@
 
     <div class="am-g container">
 
-        <form class="am-form" action="../users" method="POST">
+        <form class="am-form" action="{{url('/admin/users')}}" method="POST">
             <fieldset>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <legend>用户添加</legend>
