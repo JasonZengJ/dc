@@ -14,7 +14,13 @@ class VerifyCsrfToken extends BaseVerifier {
 	 */
 	public function handle($request, Closure $next)
 	{
-		return parent::handle($request, $next);
+
+		try {
+			return parent::handle($request, $next);
+		} catch(TokenMismatchException $e) {
+			return response('下单超时，请重新下单！',500);
+		}
+
 	}
 
 }

@@ -2,7 +2,7 @@
 
 use Closure;
 
-class MyMiddleware {
+class UserCheck {
 
 	/**
 	 * Handle an incoming request.
@@ -13,6 +13,11 @@ class MyMiddleware {
 	 */
 	public function handle($request, Closure $next)
 	{
+
+		if (!$request->getSession()->get('user')) {
+			return redirect()->guest('auth/login');
+		}
+
 		return $next($request);
 	}
 

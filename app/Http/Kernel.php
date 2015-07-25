@@ -27,7 +27,8 @@ class Kernel extends HttpKernel {
 		'auth' => 'diancan\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'diancan\Http\Middleware\RedirectIfAuthenticated',
-		'mymid' => 'diancan\Http\Middleware\MyMiddleware',
+		'userCheck' => 'diancan\Http\Middleware\UserCheck',
+		'adminCheck' => 'diancan\Http\Middleware\AdminCheck',
 	];
 
 }

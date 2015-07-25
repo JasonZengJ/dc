@@ -29,23 +29,45 @@ Route::get('/', 'IndexController@index');
 //});
 
 Route::group(['prefix' => 'admin','namespace'],function(){
-	Route::resources([
-		'/' => 'Admin\IndexController',
-		'orders' => 'Admin\OrderController',
-		'dishes' => 'Admin\DishesController',
-		'users'  => 'Admin\UsersController',
-		'dishCates' => 'Admin\DishCateController'
-	]);
-	Route::controllers([
-		'/' => 'Admin\IndexController'
-	]);
+
+
+	Route::group(['middleware' => ['adminCheck']], function()
+	{
+
+		Route::resources([
+			'/' => 'Admin\IndexController',
+			'orders' => 'Admin\OrderController',
+			'dishes' => 'Admin\DishesController',
+			'users'  => 'Admin\UsersController',
+			'dishCates' => 'Admin\DishCateController'
+		]);
+		Route::controllers([
+			'/' => 'Admin\IndexController'
+		]);
+
+	});
+
+
 });
 
-Route::resource('user','UsersController');
-Route::resource('order','OrderController');
+
+Route::group(['middleware' => ['userCheck']], function()
+{
+
+	Route::resources([
+		'user'  => 'UsersController',
+		'order' => 'OrderController'
+	]);
+
+	Route::controllers([
+		'user'=> 'UsersController'
+	]);
+
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-	'user'=> 'UsersController',
+	'password' => 'Auth\PasswordController'
 ]);
+
+
