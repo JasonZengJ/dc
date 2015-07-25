@@ -162,7 +162,7 @@
 
     </div>
 
-    <form id="orderForm" style="display: none" action="order/create" method="GET">
+    <form id="orderForm" style="display: none" action="{{url('/order/create')}}" method="GET">
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="dishData" id="dishData">
