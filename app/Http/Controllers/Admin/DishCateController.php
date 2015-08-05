@@ -28,7 +28,6 @@ class DishCateController extends Controller {
 	public function create()
 	{
 		//
-
 		return view('admin/dish_cates/dish_cates_add');
 	}
 
@@ -37,9 +36,14 @@ class DishCateController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+
+		$this->validate($request,[
+			'cateName' => 'required'
+		]);
+
 		$dishCates = new FoodsType();
 		$dishCates->foodtype_name = Input::get('cateName');
 
@@ -82,10 +86,12 @@ class DishCateController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
 		//
-
+		$this->validate($request,[
+			'cateName' => 'required'
+		]);
 		$dishCate = FoodsType::find($id);
 		$dishCate->foodtype_name = Input::get('cateName');
 

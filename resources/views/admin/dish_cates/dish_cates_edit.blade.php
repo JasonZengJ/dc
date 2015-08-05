@@ -7,6 +7,15 @@
 
     <div class="am-g container">
 
+        @if (count($errors) > 0)
+            <div style="margin: 10px;border-radius: 3px" class="am-alert am-alert-warning">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form class="am-form" action="{{url('/admin/dishCates/'.$dishCate->id)}}" method="POST">
             <fieldset>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">

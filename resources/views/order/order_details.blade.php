@@ -25,7 +25,7 @@
     <div class="am-g container">
 
         <div class="menu-title">
-            <h3>下单成功！</h3>
+            <h3>{{$menuTitle}}</h3>
         </div>
 
         <p><span>订单编号: </span>{{$order->order_id2}}</p>
@@ -57,6 +57,12 @@
                 </tbody>
             </table>
         </div>
+
+        @if(!$noBack)
+        <div class="am-form-group" >
+            <a class="am-btn am-btn-warning am-radius am-btn-block" href="{{url('/')}}">返回主页</a>
+        </div>
+        @endif
 
     </div>
 @endsection

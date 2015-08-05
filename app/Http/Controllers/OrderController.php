@@ -15,9 +15,13 @@ class OrderController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
 		//
+		$user		= $request->session()->get('user');
+		$orders = Orders::where('order_user',$user->id)->orderBy('order_addtime','desc')->get();
+
+		return view('order/orders',["orders" => $orders,'user' => $user]);
 	}
 
 	/**
@@ -57,8 +61,6 @@ class OrderController extends Controller {
 	public function store(Request $request)
 	{
 		//
-
-
 		$user     = $request->session()->get('user');
 		$dishData = json_decode($request->input('dishData'));
 
@@ -69,7 +71,7 @@ class OrderController extends Controller {
 		$order->order_addtime = Date('Y-m-d H:i:s');;
 		$order->order_totalprice = $request->input('totalPrice');
 		$order->order_price 	= $request->input('totalPrice');
-		$order->order_status    = 1;
+		$order->order_status    = 0;
 		$order->order_text      = $request->input('position');
 		$order->order_username  = $user->user_name;
 		$order->order_userphone = $user->user_phone;
@@ -90,7 +92,7 @@ class OrderController extends Controller {
 
 			}
 
-			return redirect('order/'.$order->id);
+			return view('order/order_details',['order' => $order,'user' => $user,'menuTitle' => '下单成功！']);
 
 		} else {
 
@@ -114,7 +116,7 @@ class OrderController extends Controller {
 		$order = Orders::find($id);
 		$user  = $request->session()->get('user');
 
-		return view('order/order_details',['order' => $order,'user' => $user]);
+		return view('order/order_details',['order' => $order,'user' => $user,'menuTitle' => "我的订单",'noBack' => 1]);
 
 	}
 

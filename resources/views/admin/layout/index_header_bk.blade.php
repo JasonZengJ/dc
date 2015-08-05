@@ -36,7 +36,7 @@
                 <li class="active"><a href="{{url('/admin/dishes')}}"><span class="am-icon-beer"></span> 菜品管理</a></li>
                 <li><a href="{{url('/admin/dishCates')}}"><span class="am-icon-archive"></span> 菜品分类管理</a></li>
                 <li><a href="{{url('/admin/orders')}}"><span class="am-icon-list"></span>  订单管理</a></li>
-                {{--<li><a href="{{url('/admin/users')}}"><span class="am-icon-user"></span>  用户管理</a></li>--}}
+                <li><a href="{{url('/admin/users')}}"><span class="am-icon-user"></span>  用户管理</a></li>
                 {{--<li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>--}}
                 {{--<li class="am-dropdown" data-am-dropdown>--}}
                     {{--<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">--}}

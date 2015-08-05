@@ -18,6 +18,7 @@ class UserCheck {
 			return redirect()->guest('auth/login');
 		}
 
+
 		return $next($request);
 	}
 

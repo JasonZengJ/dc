@@ -24,7 +24,7 @@
     <div class="am-g container">
 
         <div class="menu-title">
-            <h3>下单成功！</h3>
+            <h3>订单详情</h3>
         </div>
 
         <p><span>订单编号: </span>{{$order->order_id2}}</p>

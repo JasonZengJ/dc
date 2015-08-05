@@ -90,7 +90,26 @@ return [
 			'rule-name' => 'custom-message',
 		],
 		'password' => [
-			'required' => '密码部分需要填写完整',
+			'required' => '密码不能为空',
+			'confirmed' => '密码与确认密码不一致',
+			'min' => '密码至少要6位',
+		],
+		'user_phone' => [
+			'required' => '手机号码不能为空',
+			'min' 	   => '手机号码至少要   :min 位',
+			'max' 	   => '手机号码不能超过 :max 位',
+			'numeric'  => '手机号码必须为数字'
+		],
+		'user_name' => [
+			'required' => '姓名不能为空',
+
+		],
+		'dish_price' => [
+			'required' => '价格不能为空',
+			'numeric'  => '价格必须为数字'
+		],
+		'dish_name'  => [
+			'required' => '菜名不能为空',
 		]
 	],
 

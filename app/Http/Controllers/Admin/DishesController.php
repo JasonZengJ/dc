@@ -7,9 +7,12 @@ use diancan\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use diancan\Foods;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
 
 class DishesController extends Controller {
+
+
+
+	protected $dishFormCheck;
 
 	/**
 	 * Display a listing of the resource.
@@ -39,9 +42,12 @@ class DishesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$this->validate($request,[
+			'dish_name'  => 'required',
+			'dish_price' => 'required|numeric'
+		]);
 
 		$food = new Foods();
 		$food->food_name  	 = Input::get('dish_name');
@@ -79,6 +85,9 @@ class DishesController extends Controller {
 	 */
 	public function edit($id)
 	{
+
+
+
 		//
 		$foods = Foods::find($id);
 		$foodsTypes = FoodsType::all(['id','foodtype_name']);
@@ -91,8 +100,13 @@ class DishesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
+
+		$this->validate($request,[
+			'dish_name'  => 'required',
+			'dish_price' => 'required|numeric'
+		]);
 
 		$foods = Foods::find($id);
 		$foods->food_name  	  = Input::get('dish_name');

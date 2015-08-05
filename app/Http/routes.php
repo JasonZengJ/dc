@@ -65,9 +65,12 @@ Route::group(['middleware' => ['userCheck']], function()
 
 });
 
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController'
+	'password' => 'Auth\PasswordController',
+	'printer'  => 'PrintController'
 ]);
+
 
 
