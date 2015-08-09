@@ -36,8 +36,7 @@
         padding-left: 0px;
         padding-right: 0px;
         margin: 0px;
-        overflow-y: scroll;
-        overflow-x: hidden;
+
 
     }
 
@@ -49,9 +48,17 @@
         color: #525252;
     }
 
-    .am-g.dish-foods {
+
+    .am-g.dish-foods,.am-g .dish-cates {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+
         overflow-y: scroll;
         overflow-x: hidden;
+    }
+
+    .am-g.dish-foods {
+
         height: 100%;
     }
 
