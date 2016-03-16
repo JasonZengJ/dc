@@ -10,7 +10,7 @@
     <link rel="icon" href="/image/icon.png'" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="/image/icon.png">
     <link rel="shortcut icon" href="/image/icon.png" type="image/x-icon" />
-
+    <meta name = "format-detection" content = "telephone=no">
     <!-- Fonts -->
     {{--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>--}}
     <script src="/js/lib/jquery/jquery-1.11.3.min.js"></script>

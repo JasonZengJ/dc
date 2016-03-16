@@ -25,6 +25,7 @@
                     <th>编号</th>
                     <th>下单人</th>
                     <th>下单时间</th>
+                    <th>总计</th>
                     {{--<th>状态</th>--}}
                 </tr>
                 </thead>
@@ -34,6 +35,7 @@
                     <td><a href="{{url('/admin/orders/'.$order->id)}}">{{$order->order_id2}}</a></td>
                     <td>{{$order->order_username}}</td>
                     <td>{{$order->order_addtime}}</td>
+                    <td>{{$order->order_price}}</td>
                     {{--<td>{{$order->order_addtime}}</td>--}}
                 </tr>
                 @endforeach

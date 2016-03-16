@@ -3,6 +3,10 @@
 
 <style type="text/css">
 
+    .container {
+        /*-webkit-overflow-scrolling: auto;*/
+    }
+
     .am-g {
         /*overflow: hidden;*/
     }
@@ -109,9 +113,42 @@
         }
     }
 
+    #wrapper {
+        /*overflow: hidden;*/
+        height: 100%;
+    }
+
+    #scroller {
+        /*position: absolute;*/
+        /*overflow-y: scroll;*/
+        z-index: 1;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        /*width: 2000px;*/
+        /*height: 100%;*/
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -o-text-size-adjust: none;
+        text-size-adjust: none;
+        /*background: #fff;*/
+    }
+
 </style>
 
 @section('content')
+
+
+
 
     <div class="am-g container">
         <div class="am-u-sm-3 dish-cates" >
@@ -122,11 +159,13 @@
                 {{$foodType->foodtype_name}}
             </div>
             @endforeach
-
+                {{--<a href="wc://AutoLayout/payment?token=123&data=wwewe">点一下</a>--}}
         </div>
 
-        <div  class="am-u-sm-9 ">
+        <div  class="am-u-sm-9 " id="wrapper">
+            <div id="scroller">
             @foreach($foods_data as $key => $foodType)
+
             <div id="{{$foodType->id}}" class="am-g dish-foods" @if($key) style="display: none" @endif>
 
                 @foreach($foodType->foods as $key => $food)
@@ -146,7 +185,7 @@
 
             </div>
             @endforeach
-
+            </div>
 
         </div>
 
@@ -188,10 +227,12 @@
     </div>
 
     <script type="text/javascript" src="js/lib/jquery/jquery.touchSwipe.min.js"></script>
-
+    <script src="/js/iscroll-lite.js"></script>
     <script type="text/javascript">
 
         $(function(){
+
+//            var myScroll = new IScroll('#wrapper',{freeScroll:true});
 
             var $dish_cates = $('.dish-cates-item');
             var $dish_menu  = $('.dish-menu-item');

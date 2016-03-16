@@ -28,6 +28,7 @@
         </div>
 
         <p><span>订单编号: </span>{{$order->order_id2}}</p>
+        <p><span for="">订单总计: </span>{{$order->order_price}}￥</p>
         <p><span for="">下单人: </span>{{$order->order_username}}</p>
         <p><span for="">下单时间: </span>{{$order->order_addtime}}</p>
         <p><span for="">位置说明: </span>{{$order->order_text}}</p>
@@ -39,7 +40,7 @@
                 <tr>
                     <th>菜名</th>
                     <th>分类</th>
-                    <th>单价</th>
+                    <th>单价(￥)</th>
                     <th>数量</th>
                     {{--<th>状态</th>--}}
                 </tr>

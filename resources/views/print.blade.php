@@ -107,7 +107,7 @@
             iCurLine += 20;
             LODOP.ADD_PRINT_TEXT(iCurLine,0,150,20,"合计金额：{{$order->order_price}}元");
 
-            var text = '{{str_replace(PHP_EOL, '',$order->order_text)}}' ;
+            var text = '{{str_replace(PHP_EOL, ' , ',$order->order_text)}}' ;
             var style_index = 10 + 4 * foods.length;
             var line = parseInt((text.length + 5) / 17);
 

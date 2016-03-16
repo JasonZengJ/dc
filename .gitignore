@@ -2,3 +2,9 @@
 /node_modules
 *.env
 .DS_Store
+.idea
+public/apple_push_notification_development.pem
+app/Http/Controllers/PushController.php
+resources/views/push.blade.php
+app/Services/APNS.php
+app/Http/Controllers/mobile/

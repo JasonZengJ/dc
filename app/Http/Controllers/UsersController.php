@@ -45,9 +45,13 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id,Request $request)
 	{
 		//
+
+//		echo json_encode($request->getSession()->get('user'));
+
+		return response()->json($request->getSession()->get('user'));
 	}
 
 	/**

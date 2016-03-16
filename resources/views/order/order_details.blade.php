@@ -58,7 +58,7 @@
             </table>
         </div>
 
-        @if(!$noBack)
+        @if(!isset($noBack) or !$noBack)
         <div class="am-form-group" >
             <a class="am-btn am-btn-warning am-radius am-btn-block" href="{{url('/')}}">返回主页</a>
         </div>

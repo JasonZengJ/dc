@@ -4,9 +4,8 @@ use diancan\Http\Requests;
 use diancan\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use diancan\Orders;
 
-class OrderController extends Controller {
+class StatisticsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -16,7 +15,6 @@ class OrderController extends Controller {
 	public function index()
 	{
 		//
-		return view('admin/orders/orders',["orders" => Orders::orderBy('order_addtime','desc')->get()]);
 	}
 
 	/**
@@ -48,17 +46,6 @@ class OrderController extends Controller {
 	public function show($id)
 	{
 		//
-		$order = Orders::find($id);
-
-//		foreach($order->carts as $cart)
-//		{
-//
-//			dump($cart->food);
-//		}
-
-
-
-		return view('admin/orders/order_details',['order' => $order]);
 	}
 
 	/**

@@ -11,22 +11,11 @@
 |
 */
 
+Route::get('/home',function(){
+	echo "fuck";
+});
 
-
-//Route::get('home', 'IndexController@index');
 Route::get('/', 'IndexController@index');
-
-//Route::get('user/{user}',function(diancan\User $user) {
-//
-//	return view("welcome",['user' => $user]);
-//
-//})->where(['name' => '[a-z]+',]);
-
-//Route::group(['middleware' => 'mymid'], function()
-//{
-//	Route::get('/welcome', 'WelcomeController@index');
-//
-//});
 
 Route::group(['prefix' => 'admin','namespace'],function(){
 
@@ -47,9 +36,7 @@ Route::group(['prefix' => 'admin','namespace'],function(){
 
 	});
 
-
 });
-
 
 Route::group(['middleware' => ['userCheck']], function()
 {
@@ -65,11 +52,18 @@ Route::group(['middleware' => ['userCheck']], function()
 
 });
 
+Route::resources([
+	'push' => 'PushController',
+	'api'  => 'mobile\MobileApiController'
+]);
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-	'printer'  => 'PrintController'
+	'printer'  => 'PrintController',
+	'api' => 'mobile\MobileApiController',
+
 ]);
 
 
