@@ -46,6 +46,7 @@ class DishCateController extends Controller {
 
 		$dishCates = new FoodsType();
 		$dishCates->foodtype_name = Input::get('cateName');
+		$dishCates->foodtype_shop = 1;
 
 		if ($dishCates->save()) {
 
