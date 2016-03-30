@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin','namespace'],function(){
 	Route::group(['middleware' => ['adminCheck']], function()
 	{
 
+		Route::controller('statistics','Admin\StatisticsController');
 		Route::resources([
 			'/' => 'Admin\IndexController',
 			'orders' => 'Admin\OrderController',
@@ -31,7 +32,8 @@ Route::group(['prefix' => 'admin','namespace'],function(){
 			'dishCates' => 'Admin\DishCateController'
 		]);
 		Route::controllers([
-			'/' => 'Admin\IndexController'
+			'/' => 'Admin\IndexController',
+
 		]);
 
 	});

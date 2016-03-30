@@ -13,10 +13,10 @@ class AdminCheck {
 	 */
 	public function handle($request, Closure $next)
 	{
-		$user = $request->getSession()->get('user');
-		if ($user->user_type != 1) {
-			return response('非法访问！', 401);
-		}
+//		$user = $request->getSession()->get('user');
+//		if ($user->user_type != 1) {
+//			return response('非法访问！', 401);
+//		}
 		return $next($request);
 	}
 

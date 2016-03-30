@@ -88,15 +88,13 @@ class OrderController extends Controller {
 				$cart->cart_price  = floatval($dish->price) * $dish->amount;
 				$cart->cart_count  = $dish->amount;
 				$cart->cart_status = 1;
+				$cart->cart_addtime = $order->order_addtime;
 				$cart->save();
 
 			}
-
 			return view('order/order_details',['order' => $order,'user' => $user,'menuTitle' => '下单成功！']);
 
 		} else {
-
-
 
 		}
 
