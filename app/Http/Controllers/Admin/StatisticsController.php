@@ -78,7 +78,7 @@ class StatisticsController extends Controller {
 		$dayDatas = array();
 		for ($i = 1;$i <= $monthEndDay;$i++) {
 
-			array_push($days,$i+"号");
+			array_push($days, $i);
 			$dayRanges = $this->dayRange($monthDate->addDay(1));
 			$dayData = Orders::whereBetween('order_addtime',$dayRanges)->sum('order_price');
 			array_push($dayDatas,$dayData * 1);

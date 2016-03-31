@@ -143,7 +143,7 @@
                         series: {
                             events: {
                                 click:function(e) {
-                                    loadMonthSales(e.point.index);
+                                    loadMonthSales(e.point.index + 1);
                                 }
                             }
                         }
