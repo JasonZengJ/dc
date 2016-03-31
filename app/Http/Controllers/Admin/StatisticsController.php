@@ -71,21 +71,23 @@ class StatisticsController extends Controller {
 
 		$month = Input::get('month');
 
-		$monthDate = Carbon::now()->startOfYear()->month($month);
-		$monthEndDay = $monthDate->endOfMonth()->day;
+		$monthDate = Carbon::now()->startOfYear()->addMonth($month);
+		$monthEndDay = Carbon::now()->startOfYear()->addMonth($month)->endOfMonth()->day;
 
 		$days = array();
 		$dayDatas = array();
+		$dayRanges = array();
 		for ($i = 1;$i <= $monthEndDay;$i++) {
 
-			array_push($days, $i);
-			$dayRanges = $this->dayRange($monthDate->addDay(1));
-			$dayData = Orders::whereBetween('order_addtime',$dayRanges)->sum('order_price');
+			array_push($days, $i."号");
+			$dayRange = $this->dayRange($monthDate->addDay(1));
+			$dayData = Orders::whereBetween('order_addtime',$dayRange)->sum('order_price');
 			array_push($dayDatas,$dayData * 1);
+			array_push($dayRanges,$dayRange);
 
 		}
 
-		return array("days" => $days,"dayDatas" => $dayDatas);
+		return array("days" => $days,"dayDatas" => $dayDatas,"dayRanges" => $dayRanges);
 	}
 
 	function dayRange($date) {

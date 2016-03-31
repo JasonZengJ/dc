@@ -55,7 +55,7 @@
                 $.post("{{url('/admin/statistics/total-order-price-per-month')}}",{
                     year:year
                 },function(data) {
-                    initSalesPriceChart(year + "年中每月的营业额","每月营业额",data["months"],data["monthDatas"]);
+                    initSalesPriceChart(year + "年中每月的营业额","营业额",data["months"],data["monthDatas"]);
                 });
             }
             function loadYearSales() {
@@ -143,7 +143,7 @@
                         series: {
                             events: {
                                 click:function(e) {
-                                    loadMonthSales(e.point.index + 1);
+                                    loadMonthSales(e.point.index);
                                 }
                             }
                         }
@@ -160,7 +160,7 @@
                 $.post("{{url('/admin/statistics/total-order-price-per-day')}}",{
                     month:month
                 },function(data) {
-                    initSalesPriceChart((month + 1)+"月中每天的营业额","每日营业额",data["days"],data["dayDatas"]);
+                    initSalesPriceChart((month + 1)+"月中每天的营业额","营业额",data["days"],data["dayDatas"]);
                 });
 
             }
